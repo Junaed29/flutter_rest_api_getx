@@ -5,6 +5,9 @@ import 'package:get/get.dart';
 import '../model/User.dart';
 
 class NetworkControl extends GetConnect {
+  // Post request
+  Future<Response> postUser(Map data) => post("", data);
+
   Future<List<User>?> getUserList() async {
     var response = await get("https://jsonplaceholder.typicode.com/users");
     var userList = <User>[];
